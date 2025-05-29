@@ -2,7 +2,7 @@
 title: Is your food what you think it is?
 description: Want to know if your packed food is healthy, vegetarian, or contains palm oil? Discover how the Open Food Facts app helps you scan food barcodes and get instant nutrition insights.
 date: 2025-05-29
-catagories: [Software, App]
+categories: [Software, App]
 tags: [lifestyle]
 ---
 ### Understand What’s in Your Food with Open Food Facts
