@@ -1,7 +1,7 @@
 ---
 title: Windows Notepad Gets a Modern Makeover with Text Formatting and Markdown Support
 description: Discover the latest Windows Notepad update with version 11.2504.50.0, now rolling out to Windows Insiders of canary and dev! This post explores the new text formatting toolbar, Markdown support, and how these features modernize the classic editor. Learn what’s new, why it matters, and how to try it yourself.
-image: https://drive.google.com/drive-viewer/AKGpihaqRr04AIn-dsgIjAexjIz7KCYHu3EWObxG0TBH4CghxsEzTrAG-HodRVbWUmO9B6nGBvwRZ3Iw_3dE2Zx7MyB_GP4b_LG5yQk=w1920-h886-rw-v1
+image: https://lh3.googleusercontent.com/d/1wkC37cGKaK_Zt6_9Vu2EHpzWOi64eymh
 date: 2025-06-01
 categories: [Software, Windows]
 tags: [windows]
