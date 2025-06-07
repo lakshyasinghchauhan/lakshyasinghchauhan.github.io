@@ -6,6 +6,7 @@ date: 2025-06-04
 categories: [Infrastucture, Telecom]
 tags: [elon-musk]
 ---
+
 India, with its vast population of over 1.4 billion and a digital economy hungry for reliable connectivity, is on the cusp of a major technological leap with the anticipated launch of Starlink, Elon Musk’s satellite internet service. After years of regulatory hurdles, Starlink has secured a Letter of Intent (LoI) from India’s Department of Telecommunications (DoT), paving the way for its entry into the world’s second-largest internet market. Here’s everything you need to know about Starlink’s launch in India, its potential impact, and what it means for millions of users.
 ## A New Era of Connectivity
 Starlink, operated by SpaceX, uses a constellation of low-Earth orbit (LEO) satellites to deliver high-speed, low-latency internet, bypassing the need for traditional cable or fiber infrastructure. This makes it ideal for India, where only 950 million of the population are internet subscribers, and rural areas often lack reliable broadband. Starlink’s technology promises download speeds of 25–220 Mbps and upload speeds of 5–20 Mbps, suitable for streaming, gaming, and remote work, even in remote regions.
