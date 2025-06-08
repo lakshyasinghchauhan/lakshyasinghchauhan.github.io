@@ -1,5 +1,5 @@
 ---
-title: Starlink’s Launch in India: Revolutionizing Internet Access
+title: "Starlink’s Launch in India: Revolutionizing Internet Access"
 description: Explore how Starlink’s satellite internet service is set to transform connectivity in India, offering high-speed internet to urban and rural areas alike, with affordable plans and key partnerships.
 image: https://lh3.googleusercontent.com/d/19a2Pui15grHIgaGlhK6ttnY8S6rXUYYl
 date: 2025-06-04
