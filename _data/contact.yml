@@ -13,6 +13,10 @@
 - type: rss
   icon: "fas fa-rss"
   noblank: true
+
+- type: ko-fi
+  icon: 'fa-solid fa-money-bill'
+  url: 'https://ko-fi.com/lakshyasinghchauhan'
 # Uncomment and complete the url below to enable more contact options
 #
 # - type: mastodon
