@@ -14,9 +14,9 @@
   icon: "fas fa-rss"
   noblank: true
 
-- type: ko-fi
+- type: tips
   icon: 'fa-solid fa-money-bill'
-  url: 'https://ko-fi.com/lakshyasinghchauhan'
+  url: 'https://getmetoffee.vercel.app/payment.html?upiId=8320390785%40pz&name=Lakshya+Singh+Chauhan&price=10'
 # Uncomment and complete the url below to enable more contact options
 #
 # - type: mastodon
