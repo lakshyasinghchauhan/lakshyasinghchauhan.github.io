@@ -11,7 +11,7 @@ tags: [stackedit]
 I know it's a pain in the back to write and publish Jekyll blogs because I am too a owner of a Jekyll blog. Now, I know that writting in markdown is easy and all of that. But, you see, StackEdit has  a ton of features like directly posting to your Github Jekyll blog.
 
 ## What is StackEdit?
-[StackEdit](http://stackedit.io) is a free and open-source markdown writting web app. It just makes writing so much easier! I don't need to go to Google or any cheatsheet every 10 seconds just to know how to make somthing **bold** in markdown, it's all right there!
+[StackEdit](https://stackedit.io) is a free and open-source markdown writting web app. It just makes writing so much easier! I don't need to go to Google or any cheatsheet every 10 seconds just to know how to make somthing **bold** in markdown, it's all right there!
 
 ## Why even care?
 StackEdit is not just good for writing markdown files, it can export them to HTML code too! And if you for some reason use Google's Blogger (yuck), then you can directly publish you files to it too.
