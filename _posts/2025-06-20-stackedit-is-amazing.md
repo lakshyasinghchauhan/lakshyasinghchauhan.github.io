@@ -6,8 +6,6 @@ categories: [Software, WebApp]
 tags: [stackedit]
 ---
 
-# StackEdit: Write Jekyll Blogs Easily!
-
 I know it's a pain in the back to write and publish Jekyll blogs because I am too a owner of a Jekyll blog. Now, I know that writting in markdown is easy and all of that. But, you see, StackEdit has  a ton of features like directly posting to your Github Jekyll blog.
 
 ## What is StackEdit?

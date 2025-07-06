@@ -1,12 +1,10 @@
 ---
 title: "Essential Windows 11 Recovery and Repair Commands"
-description: "When your Windows 11 system isn't behaving as it should, built-in recovery and repair tools can help fix a variety of issues. Below is a comprehensive list of essential commands every power user and technician should know."
 image: https://lh3.googleusercontent.com/d/1Oj5Md_vp5R9Q8Zw0U3UdxLRBAe6C2TQB
 date: 2025-06-18 18:51:53 +0530
 categories: [Software, Windows]
 tags: [windows]
 ---
-# Essential Windows 11 Recovery and Repair Commands
 
 When your Windows 11 system isn't behaving as it should, built-in recovery and repair tools can help fix a variety of issues. Below is a comprehensive list of essential commands every power user and technician should know.
 

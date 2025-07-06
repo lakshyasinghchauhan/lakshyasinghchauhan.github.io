@@ -22,7 +22,7 @@ I'm a passionate **Web Developer** who loves building creative solutions and exp
 
 ## 🌐 Find Me Online
 - Personal Website: [lakshyasinghchauhan.com](https://lakshyasinghchauhan.com)
-- Email: lakshya.asc@gmail.com
+- Email: [contact@lakshyasinghchauhan.com](mailto:contact@lakshyasinghchauhan.com)
 
 ---
 
