@@ -1,5 +1,5 @@
 ---
-title: "🦠 Building an India COVID-19 Tracker with HTML, CSS, JavaScript"
+title: "Building an India COVID-19 Tracker with HTML, CSS, JavaScript"
 description: "In this post, we'll walk through the process of creating a responsive, interactive, and visually appealing COVID-19 tracker specifically for India using HTML, CSS, JavaScript"
 image: https://lh3.googleusercontent.com/d/183retVTFvzaZKiHF1rSp5GzFDIIz4RJe
 date: 2025-06-11
