@@ -9,7 +9,3 @@
 
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
-  package = "@netlify/plugin-sitemap-ping"
-
-  [plugins.inputs]
-  sitemapPath = "/sitemap.xml"
