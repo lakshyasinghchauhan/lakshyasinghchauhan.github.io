@@ -4,20 +4,27 @@ icon: fas fa-code
 order: 2
 ---
 
-## 🍬 Toffee
-[![Vercel](https://img.shields.io/badge/deployed-vercel-brightgreen?logo=vercel)](https://getmetoffee.vercel.app/)
-[![Views](https://visitor-badge.laobi.icu/badge?page_id=lakshyaelite.toffee)](https://github.com/lakshyaelite/toffee)
-[![GitHub stars](https://img.shields.io/github/stars/lakshyaelite/toffee?style=social)](https://github.com/lakshyaelite/toffee)
-![Screenshot](../assets/screenshots/toffee.png)
-- **Description:** The easiest way to accept digital sweet in India.
-- **Open:** [getmetoffee.vercel.app](https://getmetoffee.vercel.app/)
-- **Source code:** [GitHub](https://github.com/lakshyaelite/toffee)
+<div class="d-flex flex-wrap gap-4 justify-start">
 
-## 🦠 COVID-19 Tracker
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Flakshyasinghchauhan.com%2Fcovid-tracker)](https://lakshyasinghchauhan.com/covid-tracker/)
-[![Views](https://visitor-badge.laobi.icu/badge?page_id=lakshyaelite.covid-tracker)](https://github.com/lakshyaelite/covid-tracker)
-[![GitHub stars](https://img.shields.io/github/stars/lakshyaelite/covid-tracker?style=social)](https://github.com/lakshyaelite/covid-tracker)
-![Screenshot](https://lh3.googleusercontent.com/d/183retVTFvzaZKiHF1rSp5GzFDIIz4RJe)
-- **Description:** View wrong amount of COVID-19 cases.
-- **Open:** [/covid-tracker](https://lakshyasinghchauhan.com/covid-tracker/)
-- **Source code:** [GitHub](https://github.com/lakshyaelite/covid-tracker)
+  {% for project in site.data.projects %}
+    <div class="card" style="width: 300px;">
+      <img src="{{ project.image }}" alt="{{ project.title }} screenshot" style="width: 100%; height: auto;" />
+      <div class="card-body">
+        <h3>{{ project.emoji }} {{ project.title }}</h3>
+
+        {% if project.badges %}
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
+            {% for badge in project.badges %}
+              <span style="display: inline-block;">{{ badge.markdown | markdownify }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <p>{{ project.description }}</p>
+        <a href="{{ project.live }}" target="_blank">🔗 Live site</a><br>
+        <a href="{{ project.repo }}" target="_blank">💻 Source code</a>
+      </div>
+    </div>
+  {% endfor %}
+
+</div>
