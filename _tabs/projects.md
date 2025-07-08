@@ -21,7 +21,7 @@ order: 2
       {% if project.badges %}
         <p style="display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0;">
           {% for badge in project.badges %}
-            <span style="display: inline-block;">{{ badge.markdown | markdownify }}</span>
+            {{ badge.markdown | markdownify | remove: '<p>' | remove: '</p>' }}
           {% endfor %}
         </p>
       {% endif %}
@@ -54,7 +54,7 @@ order: 2
       {% if project.badges %}
         <p style="display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0;">
           {% for badge in project.badges %}
-            <span style="display: inline-block;">{{ badge.markdown | markdownify }}</span>
+            {{ badge.markdown | markdownify | remove: '<p>' | remove: '</p>' }}
           {% endfor %}
         </p>
       {% endif %}
