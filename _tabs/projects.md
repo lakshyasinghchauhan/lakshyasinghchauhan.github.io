@@ -6,10 +6,10 @@ order: 2
 
 # 🚀 Featured Projects
 
-<div class="d-flex flex-wrap gap-4 justify-start">
+<div class="d-flex flex-wrap justify-start" style="gap: 1.5rem;">
 
 {% for project in site.data.projects.featured %}
-  <div class="card" style="width: 300px;">
+  <div class="card" style="width: 300px; padding-bottom: 1rem;">
     <img src="{{ project.image }}"
          alt="{{ project.title }} screenshot"
          loading="lazy"
@@ -19,9 +19,9 @@ order: 2
       <h3>{{ project.emoji }} {{ project.title }}</h3>
 
       {% if project.badges %}
-        <p style="margin-bottom: 10px;">
+        <p style="display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0;">
           {% for badge in project.badges %}
-            {{ badge.markdown | markdownify }}
+            <span style="display: inline-block;">{{ badge.markdown | markdownify }}</span>
           {% endfor %}
         </p>
       {% endif %}
@@ -39,10 +39,10 @@ order: 2
 
 # 🧰 Other Projects
 
-<div class="d-flex flex-wrap gap-4 justify-start">
+<div class="d-flex flex-wrap justify-start" style="gap: 1.5rem;">
 
 {% for project in site.data.projects.others %}
-  <div class="card" style="width: 300px;">
+  <div class="card" style="width: 300px; padding-bottom: 1rem;">
     <img src="{{ project.image }}"
          alt="{{ project.title }} screenshot"
          loading="lazy"
@@ -52,9 +52,9 @@ order: 2
       <h3>{{ project.emoji }} {{ project.title }}</h3>
 
       {% if project.badges %}
-        <p style="margin-bottom: 10px;">
+        <p style="display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0;">
           {% for badge in project.badges %}
-            {{ badge.markdown | markdownify }}
+            <span style="display: inline-block;">{{ badge.markdown | markdownify }}</span>
           {% endfor %}
         </p>
       {% endif %}
