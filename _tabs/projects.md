@@ -4,66 +4,96 @@ icon: fas fa-code
 order: 2
 ---
 
-# 🚀 Featured Projects
+## 🚀 Featured Projects
 
-<div class="d-flex flex-wrap justify-start" style="gap: 1.5rem;">
+<style>
+  html[data-theme="light"] .project-card {
+    background-color: #ffffff !important;
+    color: #222 !important;
+    border: 1px solid #e0e0e0 !important;
+  }
 
+  html[data-theme="light"] .project-card .card-title,
+  html[data-theme="light"] .project-card .card-text,
+  html[data-theme="light"] .project-card .card-link {
+    color: #222 !important;
+  }
+
+  html[data-theme="dark"] .project-card {
+    background-color: #23272f !important;
+    color: #f1f3f6 !important;
+    border: 1px solid #343a40 !important;
+  }
+
+  html[data-theme="dark"] .project-card .card-title,
+  html[data-theme="dark"] .project-card .card-text,
+  html[data-theme="dark"] .project-card .card-link {
+    color: #f1f3f6 !important;
+  }
+
+  .project-card {
+    border-radius: 0.5rem;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .badges-row a,
+  .badges-row img {
+    display: inline-block !important;
+    margin-right: 0.4rem !important;
+    vertical-align: middle !important;
+  }
+</style>
+
+<div class="row">
 {% for project in site.data.projects.featured %}
-  <div class="card" style="width: 300px; padding-bottom: 1rem;">
-    <img src="{{ project.image }}"
-         alt="{{ project.title }} screenshot"
-         loading="lazy"
-         style="width: 100%; height: 180px; object-fit: cover; border-radius: 0.5rem 0.5rem 0 0; border-bottom: 1px solid #eee;" />
+  <div class="col-md-6 mb-4">
+    <div class="card h-100 shadow-sm project-card">
+      <img src="{{ project.image }}" class="card-img-top" style="object-fit: cover; max-height: 200px; background: #222;" alt="{{ project.title }} Screenshot">
+      <div class="card-body">
+        <h3 class="card-title"><b>{{ project.emoji }} {{ project.title }}</b></h3>
+        <p class="card-text">{{ project.description }}</p>
 
-    <div class="card-body">
-      <h3>{{ project.emoji }} {{ project.title }}</h3>
-
-      {% if project.badges %}
-        <p style="display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0;">
+        {% if project.badges %}
+        <div class="badges-row mb-2">
           {% for badge in project.badges %}
-            {{ badge.markdown | markdownify | remove: '<p>' | remove: '</p>' }}
+            {{ badge.markdown | markdownify | strip_newlines | remove: '<p>' | remove: '</p>' }}
           {% endfor %}
-        </p>
-      {% endif %}
+        </div>
+        {% endif %}
 
-      <p>{{ project.description }}</p>
-      <a href="{{ project.live }}" target="_blank">🔗 Live site</a><br>
-      <a href="{{ project.repo }}" target="_blank">💻 Source code</a>
+        <a href="{{ project.live }}" class="card-link">🔗 Live site</a><br>
+        <a href="{{ project.repo }}" class="card-link">💻 Source code</a>
+      </div>
     </div>
   </div>
 {% endfor %}
-
 </div>
 
 ---
 
-# 🧰 Other Projects
+## 🧱 Other Projects
 
-<div class="d-flex flex-wrap justify-start" style="gap: 1.5rem;">
-
+<div class="row">
 {% for project in site.data.projects.others %}
-  <div class="card" style="width: 300px; padding-bottom: 1rem;">
-    <img src="{{ project.image }}"
-         alt="{{ project.title }} screenshot"
-         loading="lazy"
-         style="width: 100%; height: 180px; object-fit: cover; border-radius: 0.5rem 0.5rem 0 0; border-bottom: 1px solid #eee;" />
+  <div class="col-md-6 mb-4">
+    <div class="card h-100 shadow-sm project-card">
+      <img src="{{ project.image }}" class="card-img-top" style="object-fit: cover; max-height: 200px; background: #222;" alt="{{ project.title }} Screenshot">
+      <div class="card-body">
+        <h5 class="card-title">{{ project.emoji }} {{ project.title }}</h5>
+        <p class="card-text">{{ project.description }}</p>
 
-    <div class="card-body">
-      <h3>{{ project.emoji }} {{ project.title }}</h3>
-
-      {% if project.badges %}
-        <p style="display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0;">
+        {% if project.badges %}
+        <div class="badges-row mb-2">
           {% for badge in project.badges %}
-            {{ badge.markdown | markdownify | remove: '<p>' | remove: '</p>' }}
+            {{ badge.markdown | markdownify | strip_newlines | remove: '<p>' | remove: '</p>' }}
           {% endfor %}
-        </p>
-      {% endif %}
+        </div>
+        {% endif %}
 
-      <p>{{ project.description }}</p>
-      <a href="{{ project.live }}" target="_blank">🔗 Live site</a><br>
-      <a href="{{ project.repo }}" target="_blank">💻 Source code</a>
+        <a href="{{ project.live }}" class="card-link">🔗 Live site</a><br>
+        <a href="{{ project.repo }}" class="card-link">💻 Source code</a>
+      </div>
     </div>
   </div>
 {% endfor %}
-
 </div>

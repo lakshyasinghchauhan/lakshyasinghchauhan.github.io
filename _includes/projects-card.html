@@ -1,0 +1,26 @@
+<div class="project-card">
+  <img
+    src="{{ include.project.image }}"
+    alt="{{ include.project.title }} screenshot"
+    style="width: 100%; border-radius: 6px; object-fit: cover; max-height: 200px;"
+  >
+  <h3>
+    {{ include.project.emoji }}
+    {{ include.project.title }}
+  </h3>
+
+  {% if include.project.badges %}
+    <div class="badges">
+      {% for badge in include.project.badges %}
+        <span>{{ badge.markdown | markdownify }}</span>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <p>{{ include.project.description }}</p>
+
+  <p>
+    <a href="{{ include.project.live }}">🔗 Live site</a><br>
+    <a href="{{ include.project.repo }}">💻 Source code</a>
+  </p>
+</div>

@@ -1,0 +1,24 @@
+/* Card dark/light mode styles */
+:root {
+  --card-bg-light: #fff;
+  --card-bg-dark: #23272f;
+  --card-text-light: #222;
+  --card-text-dark: #eee;
+  --card-shadow-light: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --card-shadow-dark: 0 2px 8px rgba(0, 0, 0, 0.32);
+}
+
+.project-card {
+  background-color: var(--card-bg-light);
+  color: var(--card-text-light);
+  box-shadow: var(--card-shadow-light);
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+@media (prefers-color-scheme: dark) {
+  .project-card {
+    background-color: var(--card-bg-dark);
+    color: var(--card-text-dark);
+    box-shadow: var(--card-shadow-dark);
+  }
+}
