@@ -28,6 +28,9 @@ url: "https://lakshyasinghchauhan.com" # change to your site URL
 github:
   username: lakshyaelite # change to your GitHub username
 
+codepen:
+  username: Lakshya_2708 # change to your CodePen username
+
 #twitter:
 #  username: twitter_username # change to your Twitter username
 
@@ -40,6 +43,7 @@ social:
     # The first element serves as the copyright owner's link
     # https://twitter.com/username # change to your Twitter homepage
     - https://github.com/lakshyaelite # change to your GitHub homepage
+    - https://codepen.io/Lakshya_2708 # change to your CodePen homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username

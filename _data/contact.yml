@@ -3,6 +3,10 @@
 - type: github
   icon: "fab fa-github"
 
+- type: codepen
+  icon: "fab fa-codepen"
+  url: "https://codepen.io/Lakshya_2708" # Fill with your CodePen profile link
+
 #- type: twitter
 #  icon: "fa-brands fa-x-twitter"
 
@@ -16,7 +20,7 @@
 
 - type: tips
   icon: 'fa-solid fa-money-bill'
-  url: 'https://getmetoffee.vercel.app/payment.html?upiId=8320390785%40pz&name=Lakshya+Singh+Chauhan&price=10'
+  url: 'https://getmetoffee.vercel.app/payment.html?upiId=8320390785@pz&name=Lakshya+Singh+Chauhan&price=10'
 # Uncomment and complete the url below to enable more contact options
 #
 # - type: mastodon
