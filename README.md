@@ -22,7 +22,7 @@ Welcome to the source code for my personal website: [lakshyasinghchauhan.com](ht
 - **Jekyll** + **Chirpy Theme**
 - **Tailwind CSS** (via theme)
 - **Markdown** for content
-- **Netlify / GitHub Pages** for deployment
+- **GitHub Pages** for deployment
 - **Cloudflare** for DNS + security
 
 ---
