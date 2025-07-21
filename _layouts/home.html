@@ -23,8 +23,8 @@ refactor: true
                 src="{{ src }}"
                 alt="{{ alt }}"
                 loading="lazy"
-                class="hero-image w-100 h-100 object-fit-cover"
-                style="position: absolute; top: 0; left: 0; z-index: 1;"
+                class="hero-image"
+                style="position: absolute; top: 0; left: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; object-position: center;"
               >
 
               <!-- Dark overlay for better text readability -->
@@ -157,8 +157,10 @@ refactor: true
                           {{ badge.markdown | markdownify }}
                         {% elsif badge.markdown contains '<img' %}
                           {{ badge.markdown }}
-                        {% else %}
+                        {% elsif badge.markdown %}
                           <span class="badge bg-secondary">{{ badge.markdown }}</span>
+                        {% else %}
+                          <span class="badge bg-secondary">{{ badge }}</span>
                         {% endif %}
                       </span>
                     {% endfor %}
@@ -166,7 +168,6 @@ refactor: true
                 {% endif %}
 
                 <p class="project-description mb-3 flex-grow-1">{{ project.description }}</p>
-
 
                 <div class="mt-auto">
                   <div class="d-flex gap-2">
@@ -281,6 +282,17 @@ refactor: true
   }
 
   /* Hero Section */
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    min-height: 300px;
+    max-height: 600px;
+    aspect-ratio: 16/7;
+    transition: none;
+  }
   .hero-card {
     border-radius: 0.75rem;
     overflow: hidden;
@@ -436,6 +448,15 @@ refactor: true
   .badge-wrapper .badge {
     font-size: 0.75rem;
     padding: 0.35em 0.65em;
+    background: none !important;
+    color: var(--heading-color) !important;
+    border: 1px solid var(--border-color, #e0e0e0);
+    font-weight: 500;
+  }
+  .badge-wrapper .badge.bg-secondary {
+    background: none !important;
+    color: var(--heading-color) !important;
+    border: 1px solid var(--border-color, #e0e0e0);
   }
 
   .project-tech-badge {

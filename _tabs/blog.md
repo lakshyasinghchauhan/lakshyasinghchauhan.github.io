@@ -241,10 +241,10 @@ order: 3
 
 <!-- Filter Controls as Dropdown -->
 <div class="filter-dropdown" id="filterDropdown">
-  <button class="filter-dropdown-btn" onclick="toggleFilterDropdown(event)">
+  <button type="button" class="filter-dropdown-btn" onclick="toggleFilterDropdown(event)">
     <i class="fas fa-filter me-1"></i>Filter Posts
   </button>
-  <div class="filter-dropdown-content">
+  <div class="filter-dropdown-content" tabindex="-1">
     <div class="d-flex justify-content-between align-items-center mb-2">
       <span style="color: var(--filter-text); font-weight: 600;">Options</span>
       <button class="clear-filters" onclick="clearAllFilters();event.stopPropagation();">
@@ -399,7 +399,9 @@ function toggleFilterDropdown(event) {
   dropdown.classList.toggle('show');
   // Close dropdown when clicking outside
   if (dropdown.classList.contains('show')) {
+  setTimeout(function() {
     document.addEventListener('click', closeDropdownOnClickOutside);
+  }, 0);
   }
 }
 
@@ -408,6 +410,9 @@ function closeDropdownOnClickOutside(e) {
   if (!dropdown.contains(e.target)) {
     dropdown.classList.remove('show');
     document.removeEventListener('click', closeDropdownOnClickOutside);
+    // Remove focus from dropdown content to prevent accidental re-opening
+    var content = dropdown.querySelector('.filter-dropdown-content');
+    if (content) content.blur();
   }
 }
 
