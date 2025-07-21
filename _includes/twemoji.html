@@ -1,0 +1,21 @@
+<script src="https://cdn.jsdelivr.net/npm/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  twemoji.parse(document.body, {
+    folder: 'svg',
+    ext: '.svg',
+    className: 'emoji',
+    size: 'original',
+    base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/'
+  });
+});
+</script>
+<style>
+img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
+  display: inline;
+}
+</style>

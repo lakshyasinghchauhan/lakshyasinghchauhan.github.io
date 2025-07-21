@@ -231,6 +231,3 @@ jekyll-archives:
 plugins:
   - jekyll-sitemap
   - jekyll-include-cache
-
-gems:
-  - jekyll/twemoji

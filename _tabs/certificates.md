@@ -11,45 +11,83 @@ Below are some of the certificates I’ve earned through competitions, courses, 
 </div>
 
 <style>
-  @media (prefers-color-scheme: dark) {
-    .project-card {
-      background-color: #23272f !important;
-      color: #f1f3f6 !important;
-      border-color: #343a40 !important;
-    }
-    .project-card .card-title,
-    .project-card .card-text,
-    .project-card .card-link {
-      color: #f1f3f6 !important;
-    }
-    .project-card .card-link {
-      text-decoration: underline;
-    }
-    .project-card .card-img-top {
-      background: #23272f !important;
-    }
+  :root {
+    --cert-card-bg: #fff;
+    --cert-card-color: #222;
+    --cert-card-border: #e0e0e0;
+    --cert-card-title: #222;
+    --cert-card-text: #222;
+    --cert-card-link: #222;
+    --cert-card-img-bg: #fff;
   }
-  @media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
-    .card.project-card, .project-card {
-      background-color: #fff !important;
-      color: #222 !important;
-      border: 1px solid #e0e0e0 !important;
-    }
-    .card.project-card .card-title,
-    .card.project-card .card-text,
-    .card.project-card .card-link,
-    .project-card .card-title,
-    .project-card .card-text,
-    .project-card .card-link {
-      color: #222 !important;
-    }
-    .project-card .card-img-top {
-      background: #fff !important;
-    }
+  
+  /* Fix: Use data-mode instead of prefers-color-scheme and add multiple selectors */
+  html[data-mode="dark"],
+  body[data-mode="dark"],
+  [data-bs-theme="dark"],
+  .dark-mode {
+    --cert-card-bg: #23272f;
+    --cert-card-color: #f1f3f6;
+    --cert-card-border: #343a40;
+    --cert-card-title: #f1f3f6;
+    --cert-card-text: #f1f3f6;
+    --cert-card-link: #f1f3f6;
+    --cert-card-img-bg: #23272f;
   }
+  
+  html[data-mode="light"],
+  body[data-mode="light"],
+  [data-bs-theme="light"],
+  .light-mode {
+    --cert-card-bg: #fff;
+    --cert-card-color: #222;
+    --cert-card-border: #e0e0e0;
+    --cert-card-title: #222;
+    --cert-card-text: #222;
+    --cert-card-link: #222;
+    --cert-card-img-bg: #fff;
+  }
+  
   .card.project-card, .project-card {
+    background-color: var(--cert-card-bg) !important;
+    color: var(--cert-card-color) !important;
+    border: 1px solid var(--cert-card-border) !important;
     border-radius: 0.5rem;
-    transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  
+  .card.project-card .card-title,
+  .card.project-card .card-text,
+  .card.project-card .card-link,
+  .project-card .card-title,
+  .project-card .card-text,
+  .project-card .card-link {
+    color: var(--cert-card-color) !important;
+  }
+  
+  .card.project-card .card-title,
+  .project-card .card-title {
+    color: var(--cert-card-title) !important;
+  }
+  
+  .card.project-card .card-text,
+  .project-card .card-text {
+    color: var(--cert-card-text) !important;
+  }
+  
+  .card.project-card .card-link,
+  .project-card .card-link {
+    color: var(--cert-card-link) !important;
+    text-decoration: underline;
+  }
+  
+  .card.project-card .card-link:hover,
+  .project-card .card-link:hover {
+    opacity: 0.8;
+  }
+  
+  .project-card .card-img-top {
+    background: var(--cert-card-img-bg) !important;
   }
 </style>
 

@@ -1,0 +1,558 @@
+---
+layout: default
+refactor: true
+---
+{% include lang.html %}
+
+{% assign latest_post = site.posts.first %}
+{% assign featured_projects = site.data.projects.featured | slice: 0, 2 %}
+
+<!-- Hero Section with Latest Post -->
+{% if latest_post %}
+  <section class="hero-section mb-5">
+    <div class="container-fluid px-0">
+      <div class="row g-0">
+        <div class="col-12">
+          <div class="hero-card position-relative overflow-hidden" style="min-height: 300px;">
+            {% if latest_post.image %}
+              {% assign src = latest_post.image.path | default: latest_post.image %}
+              {% capture src %}{% include media-url.html src=src subpath=latest_post.media_subpath %}{% endcapture %}
+              {% assign alt = latest_post.image.alt | xml_escape | default: 'Featured Post Image' %}
+
+              <img
+                src="{{ src }}"
+                alt="{{ alt }}"
+                loading="lazy"
+                class="hero-image w-100 h-100 object-fit-cover"
+                style="position: absolute; top: 0; left: 0; z-index: 1;"
+              >
+
+              <!-- Dark overlay for better text readability -->
+              <div
+                class="hero-overlay position-absolute w-100 h-100"
+                style="z-index: 2;"
+              ></div>
+            {% else %}
+              <!-- Fallback gradient background if no image -->
+              <div
+                class="hero-gradient position-absolute w-100 h-100"
+                style="z-index: 1;"
+              ></div>
+            {% endif %}
+
+            <div class="hero-content d-flex align-items-end" style="z-index: 3; padding: 2rem;">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-8">
+                    <span class="badge hero-badge mb-2 fs-6">
+                      <i class="fas fa-star me-1"></i>Latest Post
+                    </span>
+                    <h1 class="hero-title display-4 fw-bold mb-3">{{ latest_post.title }}</h1>
+                    <p class="hero-text lead mb-3">
+                      {% if latest_post.description %}
+                        {{ latest_post.description | strip_html | truncatewords: 25 }}
+                      {% else %}
+                        {{ latest_post.content | strip_html | truncatewords: 25 }}
+                      {% endif %}
+                    </p>
+                    <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
+                      <div class="hero-meta">
+                        <i class="far fa-calendar fa-fw me-1"></i>
+                        {% include datetime.html date=latest_post.date lang=lang %}
+                      </div>
+                      {% if latest_post.categories.size > 0 %}
+                        <div class="hero-meta">
+                          <i class="far fa-folder-open fa-fw me-1"></i>
+                          {% for category in latest_post.categories %}
+                            {{ category }}
+                            {%- unless forloop.last -%},{%- endunless -%}
+                          {% endfor %}
+                        </div>
+                      {% endif %}
+                    </div>
+                    <a
+                      href="{{ latest_post.url | relative_url }}"
+                      class="btn hero-btn btn-lg px-4 py-2"
+                    >
+                      <i class="fas fa-arrow-right me-2"></i>Read More
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+<!-- Featured Projects Section -->
+{% if featured_projects.size > 0 %}
+  <section class="featured-projects py-5">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12 text-center">
+          <h2 class="section-title display-5 fw-bold mb-3">Featured Projects</h2>
+          <p class="section-subtitle lead">Check out some of my latest and greatest work</p>
+        </div>
+      </div>
+
+      <div class="row g-4 mb-5">
+        {% for project in featured_projects %}
+          <div class="col-md-6">
+            <div class="project-card h-100 shadow-sm">
+              {% if project.image %}
+                <div class="project-img-container position-relative overflow-hidden" style="height: 250px;">
+                  <img
+                    src="{{ project.image }}"
+                    alt="{{ project.title }}"
+                    class="project-img w-100 h-100 object-fit-cover"
+                  >
+                  <div class="project-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                      {% if project.live %}
+                        <a
+                          href="{{ project.live }}"
+                          class="btn btn-light me-2 mb-2"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i class="fas fa-external-link-alt me-1"></i>Live Demo
+                        </a>
+                      {% endif %}
+                      {% if project.repo %}
+                        <a
+                          href="{{ project.repo }}"
+                          class="btn btn-outline-light mb-2"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i class="fab fa-github me-1"></i>Source Code
+                        </a>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+
+              <div class="project-body d-flex flex-column">
+                <div class="d-flex align-items-center mb-3">
+                  {% if project.emoji %}
+                    <span class="project-emoji fs-2 me-2">{{ project.emoji }}</span>
+                  {% endif %}
+                  <h3 class="project-title h4 mb-0">{{ project.title }}</h3>
+                </div>
+
+                <p class="project-description mb-3 flex-grow-1">{{ project.description }}</p>
+
+                {% if project.badges %}
+                  <div class="project-badges mb-3">
+                    {% for badge in project.badges %}
+                      <span class="badge-wrapper">
+                        {% if badge.markdown contains '![' %}
+                          {{ badge.markdown }}
+                        {% else %}
+                          <span class="badge project-tech-badge">{{ badge.markdown }}</span>
+                        {% endif %}
+                      </span>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+
+                <div class="mt-auto">
+                  <div class="d-flex gap-2">
+                    {% if project.live %}
+                      <a
+                        href="{{ project.live }}"
+                        class="btn btn-primary flex-fill"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fas fa-external-link-alt me-1"></i>Live Demo
+                      </a>
+                    {% endif %}
+                    {% if project.repo %}
+                      <a
+                        href="{{ project.repo }}"
+                        class="btn project-repo-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fab fa-github"></i>
+                      </a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- View All Projects Button -->
+      <div class="row">
+        <div class="col-12 text-center">
+          <a href="{{ '/projects' | relative_url }}" class="btn view-all-btn btn-lg px-5 py-3">
+            <i class="fas fa-folder-open me-2"></i>View All Projects
+            <i class="fas fa-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+<!-- Recent Posts Preview -->
+<section class="recent-posts py-5">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <h2 class="section-title display-5 fw-bold mb-3">Recent Posts</h2>
+        <p class="section-subtitle lead">Latest thoughts and insights from my blog</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      {% assign recent_posts = site.posts | where_exp: 'post', 'post.hidden != true' | slice: 1, 3 %}
+      {% for post in recent_posts %}
+        <div class="col-lg-4 col-md-6">
+          <article class="post-card h-100 shadow-sm">
+            {% if post.image %}
+              {% assign src = post.image.path | default: post.image %}
+              {% capture src %}{% include media-url.html src=src subpath=post.media_subpath %}{% endcapture %}
+              {% assign alt = post.image.alt | xml_escape | default: 'Post Preview' %}
+
+              <img
+                src="{{ src }}"
+                alt="{{ alt }}"
+                class="post-img"
+                style="height: 200px; object-fit: cover;"
+              >
+            {% endif %}
+
+            <div class="post-body d-flex flex-column">
+              <h3 class="post-title h5">{{ post.title }}</h3>
+              <p class="post-excerpt flex-grow-1">
+                {% if post.description %}
+                  {{ post.description | strip_html | truncatewords: 15 }}
+                {% else %}
+                  {{ post.content | strip_html | truncatewords: 15 }}
+                {% endif %}
+              </p>
+
+              <div class="mt-auto">
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="post-meta">
+                    <i class="far fa-calendar fa-fw me-1"></i>
+                    {% include datetime.html date=post.date lang=lang %}
+                  </small>
+                  <a href="{{ post.url | relative_url }}" class="btn btn-sm post-read-btn">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- View All Posts Button -->
+    <div class="row mt-5">
+      <div class="col-12 text-center">
+        <a href="{{ '/posts' | relative_url }}" class="btn btn-primary btn-lg px-4">
+          <i class="fas fa-blog me-2"></i>View All Posts
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Hero Section */
+  .hero-card {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border-color, var(--border-color));
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-card:hover {
+    transform: scale(1.002);
+  }
+
+  .hero-overlay {
+    background: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.65) 100%);
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    padding: 2rem 0;
+  }
+
+  .hero-badge {
+    background: linear-gradient(45deg, #667eea, #764ba2) !important;
+    color: white !important;
+    border: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-title {
+    color: white !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+  }
+
+  .hero-text {
+    color: rgba(255, 255, 255, 0.95) !important;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-meta {
+    color: rgba(255, 255, 255, 0.85) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-btn {
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: #2d3748 !important;
+    border: none;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero-btn:hover {
+    background: white !important;
+    color: #2d3748 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Section Titles */
+  .section-title {
+    color: var(--heading-color);
+  }
+
+  .section-subtitle {
+    color: var(--text-muted);
+  }
+
+  /* Featured Projects */
+  .featured-projects {
+    background: var(--main-bg);
+  }
+
+  .project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border-color, var(--border-color));
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow, 0 1rem 2rem rgba(0, 0, 0, 0.15));
+  }
+
+  .project-card:hover .project-overlay {
+    opacity: 1;
+  }
+
+  .project-overlay {
+    background: rgba(0,0,0,0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .project-body {
+    padding: 1.5rem;
+  }
+
+  .project-title {
+    color: var(--heading-color);
+  }
+
+  .project-description {
+    color: var(--text-muted);
+  }
+
+  .project-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .project-tech-badge {
+    background-color: var(--tag-bg) !important;
+    color: var(--tag-color) !important;
+  }
+
+  .project-badges img {
+    height: 20px;
+    max-width: 120px;
+    object-fit: contain;
+  }
+
+  .badge-wrapper {
+    display: inline-block;
+    line-height: 0;
+  }
+
+  .badge-wrapper img:not([src]),
+  .badge-wrapper img[src=''] {
+    display: none;
+  }
+
+  .project-repo-btn {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border-color, var(--border-color));
+    color: var(--text-color);
+  }
+
+  .project-repo-btn:hover {
+    background-color: var(--button-hover-bg, var(--hover-bg));
+    border-color: var(--card-border-color, var(--border-color));
+    color: var(--text-color);
+  }
+
+  .view-all-btn {
+    background-color: transparent;
+    border: 2px solid var(--btn-primary-bg);
+    color: var(--btn-primary-bg);
+  }
+
+  .view-all-btn:hover {
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-color);
+  }
+
+  /* Recent Posts */
+  .recent-posts {
+    background: var(--card-bg);
+    border-top: 1px solid var(--card-border-color, var(--border-color));
+  }
+
+  .post-card {
+    background: var(--main-bg);
+    border: 1px solid var(--card-border-color, var(--border-color));
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-hover-shadow, 0 0.5rem 1rem rgba(0, 0, 0, 0.1));
+  }
+
+  .post-img {
+    width: 100%;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+
+  .post-body {
+    padding: 1.5rem;
+  }
+
+  .post-title {
+    color: var(--heading-color);
+  }
+
+  .post-excerpt {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .post-meta {
+    color: var(--text-muted);
+  }
+
+  .post-read-btn {
+    background-color: transparent;
+    border: 1px solid var(--btn-primary-bg);
+    color: var(--btn-primary-bg);
+  }
+
+  .post-read-btn:hover {
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-color);
+    border-color: var(--btn-primary-bg);
+  }
+
+  /* Dark Mode Specific Adjustments */
+  [data-mode="dark"] .hero-gradient {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  }
+
+  [data-mode="dark"] .project-overlay {
+    background: rgba(0,0,0,0.8);
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .hero-card {
+      min-height: 250px;
+    }
+
+    .hero-content {
+      padding: 1rem;
+    }
+
+    .hero-title {
+      font-size: calc(1.3rem + 1.5vw);
+    }
+
+    .hero-text {
+      font-size: calc(0.9rem + 0.5vw);
+    }
+
+    .project-overlay {
+      opacity: 1 !important;
+      background: rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .project-title,
+    .post-title {
+      font-size: calc(1.1rem + 0.5vw);
+    }
+
+    .featured-projects,
+    .recent-posts {
+      padding: 3rem 0;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .hero-content {
+      padding: 1rem;
+    }
+
+    .project-body,
+    .post-body {
+      padding: 1rem;
+    }
+  }
+</style>
