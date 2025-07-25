@@ -22,9 +22,9 @@ order: 1
   body[data-mode="dark"],
   [data-bs-theme="dark"],
   .dark-mode {
-    --project-card-bg: #23272f;
+    --project-card-bg: #1E1E1E;
     --project-card-color: #f1f3f6;
-    --project-card-border: #343a40;
+    --project-card-border: #1E1E1E;
     --project-card-title: #f1f3f6;
     --project-card-text: #f1f3f6;
     --project-card-link: #f1f3f6;
@@ -89,7 +89,7 @@ order: 1
         <div class="card h-100 shadow-sm project-card w-100">
           <img src="{{ project.image }}" class="card-img-top" style="object-fit: cover; width: 100%; height: 180px; aspect-ratio: 16/9; background: #222; border-radius: 0.5rem 0.5rem 0 0;" alt="{{ project.title }} Screenshot">
           <div class="card-body d-flex flex-column p-3 pb-2">
-            <h3 class="card-title mb-1 mt-0" style="font-size: 1.25rem; line-height: 1.2; font-weight: bold;">{{ project.emoji }} {{ project.title }}</h3>
+            <h3 class="card-title mb-1 mt-0" style="font-size: 1.25rem; line-height: 1.2; font-family: 'Lato', sans-serif; font-weight: bold;">{{ project.emoji }} {{ project.title }}</h3>
             {% if project.badges %}
             <div class="badges-row mb-1" style="display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-bottom: 0.25rem !important;">
               {% for badge in project.badges %}
@@ -97,7 +97,7 @@ order: 1
               {% endfor %}
             </div>
             {% endif %}
-            <p class="card-text mb-2 mt-1" style="font-size: 1rem; line-height: 1.5;">{{ project.description }}</p>
+            <p class="card-text mb-2 mt-1" style="font-size: 1rem; line-height: 1.5; font-family: 'Source Sans Pro', sans-serif;">{{ project.description }}</p>
             <div class="mt-auto pt-2">
               <a href="{{ project.live }}" class="card-link">🔗 Live site</a><br>
               <a href="{{ project.repo }}" class="card-link">💻 Source code</a>
