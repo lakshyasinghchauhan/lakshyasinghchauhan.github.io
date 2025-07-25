@@ -1,9 +1,10 @@
 ---
-layout: blog
 title: Blog
-icon: fas fa-pen
-order: 3
+icon: fas fa-blog
+order: 1
+layout: blog
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: /blog/page/:num/
 ---
-
-# Comming Soon!
-Go to the "Home" tab for the blog posts.
