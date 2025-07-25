@@ -1,7 +1,7 @@
 ---
 title: Blog
-icon: fas fa-blog
-order: 1
+icon: fas fa-pen
+order: 3
 layout: blog
 pagination:
   enabled: true
