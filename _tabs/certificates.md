@@ -26,9 +26,9 @@ Below are some of the certificates I’ve earned through competitions, courses, 
   body[data-mode="dark"],
   [data-bs-theme="dark"],
   .dark-mode {
-    --cert-card-bg: #23272f;
+    --cert-card-bg: #1E1E1E;
     --cert-card-color: #f1f3f6;
-    --cert-card-border: #343a40;
+    --cert-card-border: #1E1E1E;
     --cert-card-title: #f1f3f6;
     --cert-card-text: #f1f3f6;
     --cert-card-link: #f1f3f6;
@@ -105,7 +105,7 @@ Below are some of the certificates I’ve earned through competitions, courses, 
             <img src="{{ cert.image }}" class="card-img-top" style="object-fit: contain; width: 100%; height: 180px; aspect-ratio: 16/9; border-radius: 0.5rem 0.5rem 0 0;" alt="{{ cert.title }}">
           </a>
           <div class="card-body d-flex flex-column p-3 pb-2">
-            <h3 class="card-title mb-1 mt-0" style="font-size: 1.15rem; line-height: 1.2; font-weight: bold;">{{ cert.title }}</h3>
+            <h3 class="card-title mb-1 mt-0" style="font-size: 1.15rem; line-height: 1.2;">{{ cert.title }}</h3>
             <p class="card-text mb-2 mt-1" style="font-size: 1rem; line-height: 1.5;">{{ cert.description }}</p>
             {% if cert.link %}
             <div class="mt-auto pt-2">
