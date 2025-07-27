@@ -1,6 +1,6 @@
 # 🌐 Lakshya Singh Chauhan – Personal Website
 
-Welcome to the source code for my personal website: [lakshyasinghchauhan.com](https://lakshyasinghchauhan.com/). Built with 💖 using [Jekyll](https://jekyllrb.com/) and the [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) theme.
+Welcome to the source code for my personal website: [lakshyasinghchauhan.com](https://lakshyasinghchauhan.com/). Built with using [Jekyll](https://jekyllrb.com/) and the [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) theme.
 
 ---
 
