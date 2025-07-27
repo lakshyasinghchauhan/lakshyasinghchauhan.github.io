@@ -125,7 +125,7 @@ comments:
   giscus:
     repo: lakshyagithub/lakshyagithub.github.io
     repo_id: R_kgDOOxyq-w
-    category: General
+    category: Giscus
     category_id: DIC_kwDOOxyq-84CqskJ
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
