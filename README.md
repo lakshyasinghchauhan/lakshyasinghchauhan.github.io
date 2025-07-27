@@ -20,7 +20,7 @@ Welcome to the source code for my personal website: [lakshyasinghchauhan.com](ht
 ## 🛠 Tech Stack
 
 - **Jekyll** + **Chirpy Theme**
-- **Tailwind CSS** (via theme)
+- **Bootstrap** (via theme)
 - **Markdown** for content
 - **GitHub Pages** for deployment
 - **Cloudflare** for DNS + security
