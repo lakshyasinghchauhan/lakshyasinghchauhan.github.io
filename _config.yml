@@ -28,9 +28,6 @@ url: "https://lakshyasinghchauhan.com" # change to your site URL
 github:
   username: lakshyaelite # change to your GitHub username
 
-codepen:
-  username: Lakshya_2708 # change to your CodePen username
-
 #twitter:
 #  username: twitter_username # change to your Twitter username
 
@@ -65,7 +62,7 @@ analytics:
   google:
     id: # fill in your Google Analytics ID
   goatcounter:
-    id: # fill in your GoatCounter ID
+    id: lakshyaelite # fill in your GoatCounter ID
   umami:
     id: # fill in your Umami ID
     domain: # fill in your Umami domain
@@ -102,7 +99,7 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: /lakshya.jpg # string, local or CORS resources
+avatar: https://seccdn.libravatar.org/avatar/850bef8b394419c15b5b5d0862540eaa944d7d6f502b5d5e89ec09c5bac989c9?s=460 # string, local or CORS resources
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
@@ -232,17 +229,3 @@ jekyll-archives:
 plugins:
   - jekyll-sitemap
   - jekyll-include-cache
-  - jekyll-paginate-v2
-
-# Pagination Settings
-pagination:
-  enabled: true
-  per_page: 6
-  permalink: '/page/:num/'
-  title: ':title - page :num of :max'
-  limit: 0
-  sort_field: 'pin,date'
-  sort_reverse: true
-  collection: 'posts'
-  extension: html
-  indexpage: 'index'
