@@ -149,11 +149,22 @@ pwa:
       # - "/example"  # URLs match `<SITE_URL>/example/*` will not be cached by the PWA
 
 # paginate: 6
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: /page:num/
+  title: ':title - page :num'
+  sort_field: 'date'
+  sort_reverse: true
+  indexpage: 'index'
+  trail:
+    before: 2
+    after: 2
 
 # The base URL of your site
 baseurl: ""
 
-# ------------ The following options are not recommended to be modified ------------------
+# ! ------------ The following options are not recommended to be modified ------------------
 
 kramdown:
   footnote_backlink: "&#8617;&#xfe0e;"
@@ -235,14 +246,3 @@ plugins:
 whitelist:
   - jekyll-paginate-v2
 
-pagination:
-  enabled: true
-  per_page: 5
-  permalink: /page:num/
-  title: ':title - page :num'
-  sort_field: 'date'
-  sort_reverse: true
-  indexpage: 'index'
-  trail:
-    before: 2
-    after: 2
