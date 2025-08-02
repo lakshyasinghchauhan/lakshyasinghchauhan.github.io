@@ -18,6 +18,10 @@ pagination:
         <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
           {% assign card_body_col = '12' %}
           {% if post.image %}
+            {% assign card_body_col = '7' %}
+          {% endif %}
+
+          {% if post.image %}
             {% assign src = post.image.path | default: post.image %}
             {% capture src %}{% include media-url.html src=src subpath=post.media_subpath %}{% endcapture %}
             {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
@@ -26,10 +30,11 @@ pagination:
               {% capture lqip_url %}{% include media-url.html src=post.image.lqip subpath=post.media_subpath %}{% endcapture %}
               {% assign lqip = 'lqip="' | append: lqip_url | append: '"' %}
             {% endif %}
-            <div class="col-md-5">
-              <img src="{{ src }}" alt="{{ alt }}" {{ lqip }}>
+            <div class="col-md-5 d-flex align-items-center justify-content-center bg-light">
+              <div class="w-100 ratio ratio-16x9">
+                <img src="{{ src }}" alt="{{ alt }}" class="img-fluid object-fit-cover w-100 h-100 rounded" {{ lqip }}>
+              </div>
             </div>
-            {% assign card_body_col = '7' %}
           {% endif %}
 
           <div class="col-md-{{ card_body_col }}">
@@ -70,6 +75,10 @@ pagination:
       <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
         {% assign card_body_col = '12' %}
         {% if post.image %}
+          {% assign card_body_col = '7' %}
+        {% endif %}
+
+        {% if post.image %}
           {% assign src = post.image.path | default: post.image %}
           {% capture src %}{% include media-url.html src=src subpath=post.media_subpath %}{% endcapture %}
           {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
@@ -78,10 +87,11 @@ pagination:
             {% capture lqip_url %}{% include media-url.html src=post.image.lqip subpath=post.media_subpath %}{% endcapture %}
             {% assign lqip = 'lqip="' | append: lqip_url | append: '"' %}
           {% endif %}
-          <div class="col-md-5">
-            <img src="{{ src }}" alt="{{ alt }}" {{ lqip }}>
+          <div class="col-md-5 d-flex align-items-center justify-content-center bg-light">
+            <div class="w-100 ratio ratio-16x9">
+              <img src="{{ src }}" alt="{{ alt }}" class="img-fluid object-fit-cover w-100 h-100 rounded" {{ lqip }}>
+            </div>
           </div>
-          {% assign card_body_col = '7' %}
         {% endif %}
 
         <div class="col-md-{{ card_body_col }}">
