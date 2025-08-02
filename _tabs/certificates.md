@@ -1,6 +1,6 @@
 ---
 title: Certificates
-icon: fas fa-scroll
+icon: fas fa-trophy
 order: 2
 ---
 
