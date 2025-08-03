@@ -1,4 +1,15 @@
 #  The contact options.
+- type: rss
+  icon: "fas fa-rss"
+  noblank: true
+
+- type: email
+  icon: "fas fa-envelope"
+  noblank: true # open link in current tab
+  
+- type: tips
+  icon: 'fa-solid fa-money-bill'
+  url: 'https://getmetoffee.vercel.app/payment.html?upiId=8320390785@pz&name=Lakshya+Singh+Chauhan&price=10'
 
 - type: github
   icon: "fab fa-github"
@@ -7,20 +18,6 @@
   icon: "fab fa-codepen"
   url: "https://codepen.io/lakshyaelite" # Fill with your CodePen profile link
 
-#- type: twitter
-#  icon: "fa-brands fa-x-twitter"
-
-- type: email
-  icon: "fas fa-envelope"
-  noblank: true # open link in current tab
-
-- type: rss
-  icon: "fas fa-rss"
-  noblank: true
-
-- type: tips
-  icon: 'fa-solid fa-money-bill'
-  url: 'https://getmetoffee.vercel.app/payment.html?upiId=8320390785@pz&name=Lakshya+Singh+Chauhan&price=10'
 # Uncomment and complete the url below to enable more contact options
 #
 # - type: mastodon
