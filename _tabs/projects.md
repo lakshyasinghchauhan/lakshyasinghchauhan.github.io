@@ -8,7 +8,7 @@ order: 1
 
 
 <style>
-  html[data-mode="dark"] {
+  :root {
     --project-card-bg: #fff;
     --project-card-color: #222;
     --project-card-border: #e0e0e0;
@@ -25,8 +25,8 @@ order: 1
     --project-card-bg: #1E1E1E;
     --project-card-color: #f1f3f6;
     --project-card-border: #1E1E1E;
-    --project-card-title: #cccccc;
-    --project-card-text: #cccccc;
+    --project-card-title: #f1f3f6;
+    --project-card-text: #f1f3f6;
     --project-card-link: #f1f3f6;
   }
   

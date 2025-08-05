@@ -11,7 +11,7 @@ Below are some of the certificates I’ve earned through competitions, courses, 
 </div>
 
 <style>
-  html[data-mode="dark"] {
+  :root {
     --cert-card-bg: #fff;
     --cert-card-color: #222;
     --cert-card-border: #e0e0e0;
