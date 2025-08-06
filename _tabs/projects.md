@@ -8,89 +8,77 @@ order: 1
 
 
 <style>
- :root {
-   --project-card-bg: #fff;
-   --project-card-color: #222;
-   --project-card-border: #e0e0e0;
-   --project-card-title: #222;
-   --project-card-text: #222;
-   --project-card-link: #222;
- }
- 
- /* Automatic dark mode based on system preference */
- @media (prefers-color-scheme: dark) {
-   :root {
-     --project-card-bg: #1E1E1E;
-     --project-card-color: #f1f3f6;
-     --project-card-border: #1E1E1E;
-     --project-card-title: #f1f3f6;
-     --project-card-text: #f1f3f6;
-     --project-card-link: #f1f3f6;
-   }
- }
- 
- /* Manual theme overrides */
- html[data-mode="dark"],
- body[data-mode="dark"],
- [data-bs-theme="dark"],
- .dark-mode {
-   --project-card-bg: #1E1E1E;
-   --project-card-color: #f1f3f6;
-   --project-card-border: #1E1E1E;
-   --project-card-title: #f1f3f6;
-   --project-card-text: #f1f3f6;
-   --project-card-link: #f1f3f6;
- }
- 
- html[data-mode="light"],
- body[data-mode="light"],
- [data-bs-theme="light"],
- .light-mode {
-   --project-card-bg: #fff;
-   --project-card-color: #222;
-   --project-card-border: #e0e0e0;
-   --project-card-title: #222;
-   --project-card-text: #222;
-   --project-card-link: #222;
- }
- 
- .card.project-card, .project-card {
-   background-color: var(--project-card-bg) !important;
-   color: var(--project-card-color) !important;
-   border: 1px solid var(--project-card-border) !important;
-   border-radius: 0.5rem;
-   transition: background 0.2s, color 0.2s, border-color 0.2s;
- }
- 
- .card.project-card .card-title,
- .card.project-card .card-text,
- .card.project-card .card-link,
- .project-card .card-title,
- .project-card .card-text,
- .project-card .card-link {
-   color: var(--project-card-color) !important;
- }
- 
- .card.project-card .card-title,
- .project-card .card-title {
-   color: var(--project-card-title) !important;
- }
- 
- .card.project-card .card-text,
- .project-card .card-text {
-   color: var(--project-card-text) !important;
- }
- 
- .card.project-card .card-link,
- .project-card .card-link {
-   color: var(--project-card-link) !important;
-   text-decoration: underline;
- }
- 
- .card.project-card .card-link:hover,
- .project-card .card-link:hover {
-   opacity: 0.8;
- }
+  :root {
+    --project-card-bg: #fff;
+    --project-card-color: #222;
+    --project-card-border: #e0e0e0;
+    --project-card-title: #222;
+    --project-card-text: #222;
+    --project-card-link: #222;
+  }
+  
+  /* Fix: Use data-mode instead of data-theme and add multiple selectors */
+  html[data-mode="dark"],
+  body[data-mode="dark"],
+  [data-bs-theme="dark"],
+  .dark-mode {
+    --project-card-bg: #1E1E1E;
+    --project-card-color: #f1f3f6;
+    --project-card-border: #1E1E1E;
+    --project-card-title: #f1f3f6;
+    --project-card-text: #f1f3f6;
+    --project-card-link: #f1f3f6;
+  }
+  
+  html[data-mode="light"],
+  body[data-mode="light"],
+  [data-bs-theme="light"],
+  .light-mode {
+    --project-card-bg: #fff;
+    --project-card-color: #222;
+    --project-card-border: #e0e0e0;
+    --project-card-title: #222;
+    --project-card-text: #222;
+    --project-card-link: #222;
+  }
+  
+  .card.project-card, .project-card {
+    background-color: var(--project-card-bg) !important;
+    color: var(--project-card-color) !important;
+    border: 1px solid var(--project-card-border) !important;
+    border-radius: 0.5rem;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  
+  .card.project-card .card-title,
+  .card.project-card .card-text,
+  .card.project-card .card-link,
+  .project-card .card-title,
+  .project-card .card-text,
+  .project-card .card-link {
+    color: var(--project-card-color) !important;
+  }
+  
+  .card.project-card .card-title,
+  .project-card .card-title {
+    color: var(--project-card-title) !important;
+  }
+  
+  .card.project-card .card-text,
+  .project-card .card-text {
+    color: var(--project-card-text) !important;
+  }
+  
+  .card.project-card .card-link,
+  .project-card .card-link {
+    color: var(--project-card-link) !important;
+    text-decoration: underline;
+  }
+  
+  .card.project-card .card-link:hover,
+  .project-card .card-link:hover {
+    opacity: 0.8;
+  }
 </style>
 
 
