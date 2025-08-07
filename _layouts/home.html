@@ -12,6 +12,39 @@ pagination:
 {% assign normal_posts = paginator.posts | where_exp: "post", "post.pin != true and post.hidden != true" %}
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
+  <script type="application/json" id="sponsors-data">
+    {{ site.data.sponsors | jsonify }}
+  </script>
+  <div id="sponsor-card-container"></div>
+  <!--
+  {% assign sponsors = site.data.sponsors %}
+  {% if sponsors and sponsors.size > 0 %}
+    {% assign random_index = "now" | date: "%s" | modulo: sponsors.size %}
+    {% assign sponsor = sponsors[random_index] %}
+
+    <article class="card-wrapper card">
+      <a href="{{ sponsor.url }}" class="post-preview row g-0 flex-md-row-reverse" target="_blank" rel="noopener">
+        <div class="col-md-5">
+          <img src="{{ sponsor.image }}" alt="{{ sponsor.alt }}">
+        </div>
+        <div class="col-md-7">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">{{ sponsor.title }}</h1>
+            <div class="card-text content mt-0 mb-3">
+              <p>{{ sponsor.description }}</p>
+            </div>
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <i class="fas fa-bullhorn fa-fw me-1"></i>
+                <span>Sponsored Content</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </article>
+  {% endif %}
+-->
 
   {% if paginator.page == 1 %}
     {% for post in pinned_posts %}
@@ -117,6 +150,42 @@ pagination:
     </article>
   {% endfor %}
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const sponsorDataElement = document.getElementById("sponsors-data");
+    if (!sponsorDataElement) return;
+
+    const sponsors = JSON.parse(sponsorDataElement.textContent);
+    if (!sponsors || sponsors.length === 0) return;
+
+    const randomSponsor = sponsors[Math.floor(Math.random() * sponsors.length)];
+
+    const container = document.getElementById("sponsor-card-container");
+    container.innerHTML = `
+      <article class="card-wrapper card pb-4">
+        <a href="${randomSponsor.url}" class="post-preview row g-0 flex-md-row-reverse" target="_blank" rel="noopener">
+          <div class="col-md-5">
+            <img src="${randomSponsor.image}" alt="${randomSponsor.alt}">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body d-flex flex-column">
+              <h1 class="card-title my-2 mt-md-0">${randomSponsor.title}</h1>
+              <div class="card-text content mt-0 mb-3">
+                <p>${randomSponsor.description}</p>
+              </div>
+              <div class="post-meta flex-grow-1 d-flex align-items-end">
+                <div class="me-auto">
+                  <i class="fas fa-bullhorn fa-fw me-1"></i>
+                  <span>Sponsored Content</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </article>
+    `;
+  });
+</script>
 
 {% if paginator.total_pages > 1 %}
   {% include post-paginator.html %}
