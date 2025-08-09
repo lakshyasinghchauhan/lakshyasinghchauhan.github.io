@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: Blog
 permalink: /
 pagination:
   enabled: true
@@ -11,19 +11,21 @@ pagination:
 {% assign normal_posts = paginator.posts | where_exp: 'post', 'post.pin != true and post.hidden != true' %}
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
-  <div class="d-flex mb-4 gap-3">
-    <a href="/tags" class="btn btn-outline-secondary d-flex align-items-center gap-2">
-      <i class="fas fa-tags"></i>
-      <span>Tags</span>
-    </a>
-    <a href="/categories" class="btn btn-outline-secondary d-flex align-items-center gap-2">
-      <i class="fas fa-folder-open"></i>
-      <span>Categories</span>
-    </a>
-    <a href="/archives" class="btn btn-outline-secondary d-flex align-items-center gap-2">
-      <i class="fas fa-archive"></i>
-      <span>Archives</span>
-    </a>
+  <div class="d-flex justify-content-center mb-3">
+    <div class="btn-group" role="group" aria-label="Blog pages">
+      <a href="/tags" class="btn btn-outline-secondary d-flex align-items-center gap-2">
+        <i class="fas fa-tags"></i>
+        <span>Tags</span>
+      </a>
+      <a href="/categories" class="btn btn-outline-secondary d-flex align-items-center gap-2">
+        <i class="fas fa-folder-open"></i>
+        <span>Categories</span>
+      </a>
+      <a href="/archives" class="btn btn-outline-secondary d-flex align-items-center gap-2">
+        <i class="fas fa-archive"></i>
+        <span>Archives</span>
+      </a>
+    </div>
   </div>
   <script type="application/json" id="sponsors-data">
     {{ site.data.sponsors | jsonify }}

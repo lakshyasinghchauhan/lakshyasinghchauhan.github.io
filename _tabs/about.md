@@ -23,7 +23,3 @@ I'm a passionate **Web Developer** who loves building creative solutions and exp
 ## 🌐 Find Me Online
 - Personal Website: [lakshyasinghchauhan.com](https://lakshyasinghchauhan.com)
 - Email: [contact@lakshyasinghchauhan.com](mailto:contact@lakshyasinghchauhan.com)
-
----
-
-Thanks for visiting my profile! If you share my interests or want to collaborate, feel free to connect or check out my work.

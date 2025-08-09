@@ -16,10 +16,10 @@ timezone: Asia/Calcutta
 
 title: Lakshya Singh Chauhan # the main title
 
-tagline: The web developer # it will display as the subtitle
+tagline: Web Development, PowerPoint # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  The web developer
+  Web Development, PowerPoint
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -99,7 +99,7 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://seccdn.libravatar.org/avatar/850bef8b394419c15b5b5d0862540eaa944d7d6f502b5d5e89ec09c5bac989c9?s=460 # string, local or CORS resources
+avatar: "lakshya.jpg" # string, local or CORS resources
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
@@ -239,8 +239,11 @@ jekyll-archives:
     category: /categories/:name/
 
 plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-include-cache
+  - jekyll-archives
   - jekyll-paginate-v2
 
 whitelist:
