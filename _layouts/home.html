@@ -5,46 +5,59 @@ permalink: /
 pagination:
   enabled: true
 ---
-
 {% include lang.html %}
 
-{% assign pinned_posts = site.posts | where: "pin", true %}
-{% assign normal_posts = paginator.posts | where_exp: "post", "post.pin != true and post.hidden != true" %}
+{% assign pinned_posts = site.posts | where: 'pin', true %}
+{% assign normal_posts = paginator.posts | where_exp: 'post', 'post.pin != true and post.hidden != true' %}
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
+  <div class="d-flex mb-4 gap-3">
+    <a href="/tags" class="btn btn-outline-secondary d-flex align-items-center gap-2">
+      <i class="fas fa-tags"></i>
+      <span>Tags</span>
+    </a>
+    <a href="/categories" class="btn btn-outline-secondary d-flex align-items-center gap-2">
+      <i class="fas fa-folder-open"></i>
+      <span>Categories</span>
+    </a>
+    <a href="/archives" class="btn btn-outline-secondary d-flex align-items-center gap-2">
+      <i class="fas fa-archive"></i>
+      <span>Archives</span>
+    </a>
+  </div>
   <script type="application/json" id="sponsors-data">
     {{ site.data.sponsors | jsonify }}
   </script>
   <div id="sponsor-card-container"></div>
   <!--
-  {% assign sponsors = site.data.sponsors %}
-  {% if sponsors and sponsors.size > 0 %}
-    {% assign random_index = "now" | date: "%s" | modulo: sponsors.size %}
-    {% assign sponsor = sponsors[random_index] %}
+    {% assign sponsors = site.data.sponsors %}
+    {% if sponsors and sponsors.size > 0 %}
+      {% assign random_index = "now" | date: "%s" | modulo: sponsors.size %}
+      {% assign sponsor = sponsors[random_index] %}
 
-    <article class="card-wrapper card">
-      <a href="{{ sponsor.url }}" class="post-preview row g-0 flex-md-row-reverse" target="_blank" rel="noopener">
-        <div class="col-md-5">
-          <img src="{{ sponsor.image }}" alt="{{ sponsor.alt }}">
-        </div>
-        <div class="col-md-7">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">{{ sponsor.title }}</h1>
-            <div class="card-text content mt-0 mb-3">
-              <p>{{ sponsor.description }}</p>
-            </div>
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <i class="fas fa-bullhorn fa-fw me-1"></i>
-                <span>Sponsored Content</span>
+      <article class="card-wrapper card">
+        <a href="{{ sponsor.url }}" class="post-preview row g-0 flex-md-row-reverse" target="_blank" rel="noopener">
+          <div class="col-md-5">
+            <img src="{{ sponsor.image }}" alt="{{ sponsor.alt }}">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body d-flex flex-column">
+              <h1 class="card-title my-2 mt-md-0">{{ sponsor.title }}</h1>
+              <div class="card-text content mt-0 mb-3">
+                <p>{{ sponsor.description }}</p>
+              </div>
+              <div class="post-meta flex-grow-1 d-flex align-items-end">
+                <div class="me-auto">
+                  <i class="fas fa-bullhorn fa-fw me-1"></i>
+                  <span>Sponsored Content</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </a>
-    </article>
-  {% endif %}
--->
+        </a>
+      </article>
+    {% endif %}
+  -->
 
   {% if paginator.page == 1 %}
     {% for post in pinned_posts %}
@@ -80,7 +93,8 @@ pagination:
                     <i class="far fa-folder-open fa-fw me-1"></i>
                     <span class="categories">
                       {% for category in post.categories %}
-                        {{ category }}{% unless forloop.last %}, {% endunless %}
+                        {{ category -}}
+                        {%- unless forloop.last %}, {% endunless %}
                       {% endfor %}
                     </span>
                   {% endif %}
@@ -132,7 +146,8 @@ pagination:
                   <i class="far fa-folder-open fa-fw me-1"></i>
                   <span class="categories">
                     {% for category in post.categories %}
-                      {{ category }}{% unless forloop.last %}, {% endunless %}
+                      {{ category -}}
+                      {%- unless forloop.last %}, {% endunless %}
                     {% endfor %}
                   </span>
                 {% endif %}
@@ -151,8 +166,8 @@ pagination:
   {% endfor %}
 </div>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const sponsorDataElement = document.getElementById("sponsors-data");
+  document.addEventListener('DOMContentLoaded', function () {
+    const sponsorDataElement = document.getElementById('sponsors-data');
     if (!sponsorDataElement) return;
 
     const sponsors = JSON.parse(sponsorDataElement.textContent);
@@ -160,7 +175,7 @@ pagination:
 
     const randomSponsor = sponsors[Math.floor(Math.random() * sponsors.length)];
 
-    const container = document.getElementById("sponsor-card-container");
+    const container = document.getElementById('sponsor-card-container');
     container.innerHTML = `
       <article class="card-wrapper card pb-4">
         <a href="${randomSponsor.url}" class="post-preview row g-0 flex-md-row-reverse" target="_blank" rel="noopener">
